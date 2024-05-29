@@ -163,8 +163,9 @@ body {
 
 /* 콘텐츠 영역 */
 .content {
-	margin-left: 220px;
+	margin: 0 auto;
 	padding: 20px;
+	max-width: 800px; /* Center align the content */
 }
 
 /* 베스트셀러 섹션 */
@@ -174,17 +175,22 @@ body {
 
 .bestseller-section h2 {
 	margin-bottom: 20px;
+	text-align: center;
 }
 
 .book-list {
 	display: flex;
 	flex-direction: column; /* 가로가 아닌 세로 배열 */
+	align-items: center; /* Center align the book list */
 }
 
 .book-item {
 	display: flex;
 	margin-bottom: 20px;
 	align-items: flex-start;
+	border: 1px solid #ccc;
+	padding: 10px;
+	width: 100%;
 }
 
 .book-item img {

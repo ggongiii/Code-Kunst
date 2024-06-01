@@ -9,6 +9,9 @@
 //[알라딘키]https://www.aladin.co.kr/ttb/wblog_manage.aspx 
 //[알라딘키]ttbyonex941928001
 //[가져와야할 url] http://www.aladdin.co.kr/ttb/api/ItemList.aspx?
+//[참고URL] http://www.aladin.co.kr/ttb/api/ItemLookUp.aspx?ttbkey=TTBKey&itemIdType=ISBN13&ItemId=도서의ISBN&output=xml
+//[예시ISBN] 9791188331796
+//[참고URL값넣기]http://www.aladin.co.kr/ttb/api/ItemLookUp.aspx?ttbkey=ttbyonex941928001&itemIdType=ISBN13&ItemId=9791188331796&output=xml
 
 package aladdinApi;
 import java.util.ArrayList;

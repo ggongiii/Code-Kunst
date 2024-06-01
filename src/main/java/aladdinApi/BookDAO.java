@@ -23,7 +23,7 @@ public class BookDAO {
 			this.con = DriverManager.getConnection(this.url, this.user, this.pass);
 		} catch (Exception var1) {
 			var1.printStackTrace();
-			System.out.println("getCon����");
+			System.out.println("getCon");
 
 		} // catch
 	} // getCon()
@@ -46,11 +46,11 @@ public class BookDAO {
 			this.pstmt.setString(11, bDto.getAuthor());
 			
 			this.pstmt.executeUpdate();
-			System.out.println("DB����Ϸ�");
+			System.out.println("db insert 성공");
 
 		} catch (Exception var2) {
 			var2.printStackTrace();
-			System.out.println("insertBook ����");
+			System.out.println("insertBook");
 		}finally {
             try {
                 if (this.pstmt != null) this.pstmt.close();

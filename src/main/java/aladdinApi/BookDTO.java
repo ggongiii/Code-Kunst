@@ -3,7 +3,7 @@ public class BookDTO {
 
 	int book_id; // 기본키
 	String book_name; // 책이름
-	String isbn; // 책고유번호 int->String 변경 "-"있음
+	String isbn; // 책고유번호 int->String 변경 "문자"있음 13글자가 다 숫자인듯
 	int book_price; //가격
 	String publish_date; // 출판일 int -> string"/"있음
 	String book_pic;// 책사진

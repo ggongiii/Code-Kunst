@@ -1,4 +1,4 @@
-package AladdinApi;
+
 
 import java.util.Date;
 
@@ -15,7 +15,7 @@ public class TestInsertBook {
         book.setPublish_date("2024/02/02"); // 현재 날짜로 설정
         book.setBook_pic("sample.jpg");
         book.setBook_info("This is a sample book description.");
-        book.setInventory("100");
+        book.setInventory(100);
         book.setPublisher("Sample Publisher");
         book.setBook_category("Fiction");
         book.setAuthor("John Doe");

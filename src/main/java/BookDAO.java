@@ -1,4 +1,4 @@
-package AladdinApi;
+
 
 import java.sql.Connection;
 import java.sql.DriverManager;
@@ -24,6 +24,7 @@ public class BookDAO {
 			this.con = DriverManager.getConnection(this.url, this.user, this.pass);
 		} catch (Exception var1) {
 			var1.printStackTrace();
+			System.out.println("getCon오류");
 
 		} // catch문
 	} // getCon()
@@ -31,7 +32,7 @@ public class BookDAO {
 	public void insertBook(BookDTO bDto) {
 		try {
 			this.getCon(); // 연결
-			String sql = "insert into member values(?,?,?,?,?,?,?,?,?,?,?)";
+			String sql = "insert into book values(?,?,?,?,?,?,?,?,?,?,?)";
 			this.pstmt = this.con.prepareStatement(sql);
 			this.pstmt.setInt(1, bDto.getBook_id());
 			this.pstmt.setString(2, bDto.getBook_name());
@@ -40,13 +41,16 @@ public class BookDAO {
 			this.pstmt.setString(5,bDto.publish_date);
 			this.pstmt.setString(6, bDto.getBook_pic());
 			this.pstmt.setString(7, bDto.getBook_info());
-			this.pstmt.setInt(8, Integer.parseInt(bDto.getInventory()));
+			this.pstmt.setInt(8,bDto.getInventory());
 			this.pstmt.setString(9, bDto.getPublisher());
 			this.pstmt.setString(10, bDto.getBook_category());
 			this.pstmt.setString(11, bDto.getAuthor());
+			
+			System.out.println("DB저장완료");
 
 		} catch (Exception var2) {
 			var2.printStackTrace();
+			System.out.println("insertBook 오류");
 		}finally {
             try {
                 if (this.pstmt != null) this.pstmt.close();

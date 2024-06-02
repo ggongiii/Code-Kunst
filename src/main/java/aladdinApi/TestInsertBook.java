@@ -8,7 +8,7 @@ public class TestInsertBook {
         BookDTO book = new BookDTO();
         book.setBook_id(2);
         book.setBook_name("이도형");
-        book.setIsbn(123456789);
+        book.setIsbn("1234567890");
         book.setBook_price(1999);
         book.setPublish_date("2024/02/02");
         book.setBook_pic("sample.jpg");

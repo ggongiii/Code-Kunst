@@ -5,7 +5,7 @@
 //--------------------
 //[기본제공하는 메뉴얼]https://docs.google.com/document/d/1mX-WxuoGs8Hy-QalhHcvuV17n50uGI2Sg_GHofgiePE/edit 
 //[알라딘키]https://www.aladin.co.kr/ttb/wblog_manage.aspx 
-//[알라딘키]ttbyonex941928001
+//[알라딘키]ttbyonex941928002
 //[가져와야할 url] http://www.aladdin.co.kr/ttb/api/ItemList.aspx?
 //[참고URL] http://www.aladin.co.kr/ttb/api/ItemLookUp.aspx?ttbkey=TTBKey&itemIdType=ISBN13&ItemId=도서의ISBN&output=xml
 //[예시ISBN] 9791188331796
@@ -42,7 +42,7 @@ public class AladdinAPIUrl {
  		 * BlogBest : 블로거 베스트셀러 (국내도서만 조회 가능)
  		 */
     //----------옵션값-----------------
-    String CATEGORY_ID = "54708"; //카테고리는 상단에 정리하기
+    String CATEGORY_ID = "55890"; //카테고리는 상단에 정리하기
     String VERSION = "20131101"; // 최신버전사용
     //----------디폴트값 ( 필요로하면 api에 넣기 기본값을 쓸거라 따로 지정안함)
 	/*

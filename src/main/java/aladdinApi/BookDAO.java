@@ -16,6 +16,8 @@ public class BookDAO {
 	Connection con;
 	PreparedStatement pstmt;
 	ResultSet rs;
+	
+	private static int bookIdCounter = 0;
 
 	public BookDAO() {
 		// 삭제용
@@ -35,20 +37,19 @@ public class BookDAO {
 		try {
 			this.getCon(); // 연결
 			String sql = "insert into book values(?,?,?,?,?,?,?,?,?,?,?)";
-			this.pstmt = this.con.prepareStatement(sql);
+			pstmt = this.con.prepareStatement(sql);
 
-			// book_id가 중복되지 않도록 생성
-			this.pstmt.setInt(1, generateUniqueId());
-			this.pstmt.setString(2, bDto.getBook_name());
-			this.pstmt.setLong(3, bDto.getIsbn());
-			this.pstmt.setInt(4, bDto.getBook_price());
-			this.pstmt.setString(5, bDto.getPublish_date());
-			this.pstmt.setString(6, bDto.getBook_pic());
-			this.pstmt.setString(7, bDto.getBook_info());
-			this.pstmt.setInt(8, bDto.getInventory());
-			this.pstmt.setString(9, bDto.getPublisher());
-			this.pstmt.setString(10, bDto.getBook_category());
-			this.pstmt.setString(11, bDto.getAuthor());
+			pstmt.setInt(1, bookIdSum()); // bookid는 1씩증가하는값으로 변경
+			pstmt.setString(2, bDto.getBook_name());
+			pstmt.setString(3 , bDto.getIsbn());
+			pstmt.setInt(4, bDto.getBook_price());
+			pstmt.setString(5, bDto.getPublish_date());
+			pstmt.setString(6, bDto.getBook_pic());
+			pstmt.setString(7, bDto.getBook_info());
+			pstmt.setInt(8, bDto.getInventory());
+			pstmt.setString(9, bDto.getPublisher());
+			pstmt.setString(10, bDto.getBook_category());
+			pstmt.setString(11, bDto.getAuthor());
 
 			this.pstmt.executeUpdate();
 			System.out.println("db insert 성공");
@@ -59,10 +60,9 @@ public class BookDAO {
 		} 
 	} // insertBook
 
-	private int generateUniqueId() {
-		// 간단한 예시로, 중복되지 않는 book_id를 생성하는 방법입니다.
-		// 실제 구현에서는 더 복잡한 로직이 필요할 수 있습니다.
-		return Math.abs(UUID.randomUUID().hashCode());
-	}
+	 private int bookIdSum() {
+	        return bookIdCounter++; //랜덤값으로 변경할까생각중
+	    }
+	
 
 } // BookDAO

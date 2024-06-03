@@ -47,7 +47,7 @@
 		</div>
 	</div>
 	
-	<a href="${root}board/viewpage">베스트셀러</a> 
+	<a href="${root}board/bestSeller">베스트셀러</a> 
 	<a href="${root}board/viewpage">신간도서</a> 
 	<a href="${root}board/viewpage">게시판</a>
 </div>

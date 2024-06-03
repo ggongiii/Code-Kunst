@@ -15,5 +15,12 @@ public class BoardController {
 		return "board/main"; //jsp
 		
 	}
+	
+	@GetMapping("/bestSeller")//원래 보드에 메인해야하는데 위해서 리퀘스트 매핑을해서 안해도됨
+	public String bestSeller() {
+		
+		return "board/bestSeller"; //jsp
+		
+	}
 
 }

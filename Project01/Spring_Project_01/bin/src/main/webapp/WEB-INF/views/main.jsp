@@ -8,9 +8,9 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>미니 프로젝트</title>
 <!-- Bootstrap CDN -->
-<!-- 탑바텀메뉴css -->
+<!-- 탑메뉴css -->
 <link href="css/top_menu.css" rel="stylesheet" type="text/css" />
-<link href="css/bottom.css" rel="stylesheet" type="text/css" />
+
 <!-- 메인메뉴css -->
 <link href="css/main.css" rel="stylesheet" type="text/css" />
 <!-- JavaScript 파일 로드 -->
@@ -21,7 +21,6 @@
 	<!-- 상단 메뉴 부분 -->
 	<!-- 리액트랑 비슷한 기능 -->
 	<c:import url="/WEB-INF/views/include/top_menu.jsp" />
-	
 
 	<!-- 메인 컨텐츠 -->
 	<div class="container">

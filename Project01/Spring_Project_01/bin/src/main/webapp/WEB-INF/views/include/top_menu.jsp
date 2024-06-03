@@ -8,7 +8,7 @@
 <body>
 <div class="header">
 	<div class="logo">
-		<img src="" alt="로고!">
+		<img src="" alt="로고">
 	</div>
 	<div id="common_lnb">
 		<ul class="menu">

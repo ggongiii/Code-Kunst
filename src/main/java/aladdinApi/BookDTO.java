@@ -12,7 +12,7 @@ public class BookDTO {
     int inventory; // 책 재고   //-->XML에 책재고 정보가 없어서 삭제해야할듯 아니면 임의의값 넣어야함
     String publisher; // 퍼블리셔; 길이변경 30->300
     String book_category; // 책카테고리
-    String author; // 저자; 길이변경 30->300
+    String author; // 저자; 길이변경 30->300!
 
     // Getter and Setter methods
 

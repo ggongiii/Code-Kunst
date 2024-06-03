@@ -35,7 +35,7 @@ public class BookDAO {
 
 	public void insertBook(BookDTO bDto) {
 		try {
-			this.getCon(); // 연결
+			this.getCon(); // 연결!
 			String sql = "insert into book values(?,?,?,?,?,?,?,?,?,?,?)";
 			pstmt = this.con.prepareStatement(sql);
 

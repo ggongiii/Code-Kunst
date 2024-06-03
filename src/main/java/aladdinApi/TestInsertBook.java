@@ -21,6 +21,6 @@ public class TestInsertBook {
         BookDAO bookDAO = new BookDAO();
         bookDAO.insertBook(book);
 
-        System.out.println("성공");
+        System.out.println("성공!");
     }
 }

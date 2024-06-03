@@ -1,0 +1,78 @@
+@charset "UTF-8";
+
+/* 컨테이너 설정 */
+.main-container {
+    display: flex;
+    flex-direction: row; /* 가로 방향으로 정렬 */
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto; /* 가운데 정렬 */
+}
+
+/* 콘텐츠 영역 */
+.content {
+    flex: 1;
+    padding: 20px;
+}
+
+/* 베스트셀러 섹션 */
+.bestseller-section {
+    margin-bottom: 20px;
+}
+
+.bestseller-section h2 {
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.book-list {
+    display: flex;
+    flex-direction: column; /* 가로가 아닌 세로 배열 */
+}
+
+.book-item {
+    display: flex;
+    margin-bottom: 20px;
+    align-items: flex-start;
+    border: 1px solid #ccc;
+    padding: 10px;
+    width: 100%;
+}
+
+.book-item img {
+    width: 150px;
+    height: 220px;
+    margin-right: 20px;
+}
+
+.book-details {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.book-title {
+    font-size: 16px;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+.book-desc {
+    font-size: 14px;
+    margin-bottom: 10px;
+}
+
+.book-price {
+    font-size: 14px;
+    color: #4CAF50;
+    margin-bottom: 10px;
+}
+
+.cart-btn {
+    padding: 5px 10px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}

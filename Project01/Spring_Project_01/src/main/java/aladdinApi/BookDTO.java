@@ -2,17 +2,17 @@ package aladdinApi;
 
 public class BookDTO {
 
-    int book_id; // ê¸°ë³¸í‚¤
-    String book_name; // ì±…ì´ë¦„
-    String isbn; // ì±…ê³ ìœ ë²ˆí˜¸ isbn 11->13 ìœ¼ë¡œ ë³€ê²½
-    int book_price; // ê°€ê²© 
-    String publish_date; // ì¶œíŒì¼
-    String book_pic; // ì±…ì‚¬ì§„
-    String book_info; // ì •ë³´ (2000)
-    int inventory; // ì±… ì¬ê³    //-->XMLì— ì±…ì¬ê³  ì •ë³´ê°€ ì—†ì–´ì„œ ì‚­ì œí•´ì•¼í• ë“¯ ì•„ë‹ˆë©´ ì„ì˜ì˜ê°’ ë„£ì–´ì•¼í•¨
-    String publisher; // í¼ë¸”ë¦¬ì…”; ê¸¸ì´ë³€ê²½ 30->300
-    String book_category; // ì±…ì¹´í…Œê³ ë¦¬
-    String author; // ì €ì; ê¸¸ì´ë³€ê²½ 30->300!
+    int book_id; // ±âº»Å°
+    String book_name; // Ã¥ÀÌ¸§
+    String isbn; // Ã¥°íÀ¯¹øÈ£ isbn 11->13 À¸·Î º¯°æ
+    int book_price; // °¡°İ 
+    String publish_date; // ÃâÆÇÀÏ
+    String book_pic; // Ã¥»çÁø
+    String book_info; // Á¤º¸ (2000)
+    int inventory; // Ã¥ Àç°í   //-->XML¿¡ Ã¥Àç°í Á¤º¸°¡ ¾ø¾î¼­ »èÁ¦ÇØ¾ßÇÒµí ¾Æ´Ï¸é ÀÓÀÇÀÇ°ª ³Ö¾î¾ßÇÔ
+    String publisher; // ÆÛºí¸®¼Å; ±æÀÌº¯°æ 30->300
+    String book_category; // Ã¥Ä«Å×°í¸®
+    String author; // ÀúÀÚ; ±æÀÌº¯°æ 30->300!
 
     // Getter and Setter methods
 

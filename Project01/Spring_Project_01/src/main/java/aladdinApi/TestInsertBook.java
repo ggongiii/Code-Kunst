@@ -3,24 +3,24 @@ import java.util.Date;
 
 public class TestInsertBook {
 
-	//í…ŒìŠ¤íŠ¸ìš©
+	//Å×½ºÆ®¿ë
     public static void main(String[] args) {
         BookDTO book = new BookDTO();
         book.setBook_id(2);
-        book.setBook_name("ì´ë„í˜•");
+        book.setBook_name("ÀÌµµÇü");
         book.setIsbn("1234567890");
         book.setBook_price(1999);
         book.setPublish_date("2024/02/02");
         book.setBook_pic("sample.jpg");
-        book.setBook_info("ì´ë„í˜•ì´ì“´ì±…");
+        book.setBook_info("ÀÌµµÇüÀÌ¾´Ã¥");
         book.setInventory(100);
-        book.setPublisher("í¼ë¸”ë¦¬ì…”");
-        book.setBook_category("ì½”ë”©");
-        book.setAuthor("ì±…ì €ì1");
+        book.setPublisher("ÆÛºí¸®¼Å");
+        book.setBook_category("ÄÚµù");
+        book.setAuthor("Ã¥ÀúÀÚ1");
 
         BookDAO bookDAO = new BookDAO();
         bookDAO.insertBook(book);
 
-        System.out.println("ì„±ê³µ!");
+        System.out.println("¼º°ø!");
     }
 }

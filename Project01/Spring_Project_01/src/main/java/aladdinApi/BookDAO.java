@@ -20,7 +20,7 @@ public class BookDAO {
 	private static int bookIdCounter = 0;
 
 	public BookDAO() {
-		// ì‚­ì œìš©
+		// »èÁ¦¿ë
 	}
 
 	public void getCon() {
@@ -35,11 +35,11 @@ public class BookDAO {
 
 	public void insertBook(BookDTO bDto) {
 		try {
-			this.getCon(); // ì—°ê²°!
+			this.getCon(); // ¿¬°á!
 			String sql = "insert into book values(?,?,?,?,?,?,?,?,?,?,?)";
 			pstmt = this.con.prepareStatement(sql);
 
-			pstmt.setInt(1, bookIdSum()); // bookidëŠ” 1ì”©ì¦ê°€í•˜ëŠ”ê°’ìœ¼ë¡œ ë³€ê²½
+			pstmt.setInt(1, bookIdSum()); // bookid´Â 1¾¿Áõ°¡ÇÏ´Â°ªÀ¸·Î º¯°æ
 			pstmt.setString(2, bDto.getBook_name());
 			pstmt.setString(3 , bDto.getIsbn());
 			pstmt.setInt(4, bDto.getBook_price());
@@ -52,16 +52,16 @@ public class BookDAO {
 			pstmt.setString(11, bDto.getAuthor());
 
 			this.pstmt.executeUpdate();
-			System.out.println("db insert ì„±ê³µ");
+			System.out.println("db insert ¼º°ø");
 
 		} catch (Exception var2) {
 			var2.printStackTrace();
-			System.out.println("insertBook ì˜¤ë¥˜");
+			System.out.println("insertBook ¿À·ù");
 		} 
 	} // insertBook
 
 	 private int bookIdSum() {
-	        return bookIdCounter++; //ëœë¤ê°’ìœ¼ë¡œ ë³€ê²½í• ê¹Œìƒê°ì¤‘
+	        return bookIdCounter++; //·£´ı°ªÀ¸·Î º¯°æÇÒ±î»ı°¢Áß
 	    }
 	
 

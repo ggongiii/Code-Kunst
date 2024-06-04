@@ -57,7 +57,7 @@ public class AladdinApiMain extends DefaultHandler {
 
     @Override
     public void startElement(String uri, String localName, String qName, org.xml.sax.Attributes attributes) {
-        if (qName.equalsIgnoreCase("item")) { //xmlíƒœê·¸ì•ˆì— itemì„ë§Œë‚˜ë©´ ì½ìŒ!
+        if (qName.equalsIgnoreCase("item")) { //xmlÅÂ±×¾È¿¡ itemÀ»¸¸³ª¸é ÀĞÀ½!
         	bDTO = new BookDTO();
         }
         content = new StringBuilder();
@@ -66,7 +66,7 @@ public class AladdinApiMain extends DefaultHandler {
     @Override
     public void endElement(String uri, String localName, String qName) {
         if (bDTO != null) {
-        	//----ì¹´í…Œê³ ë¦¬ë„£ì„ë§Œí•œxmlê°’ì´ ì—†ì–´ì„œ ì´ê±¸ë¡œëŒ€ì²´!
+        	//----Ä«Å×°í¸®³ÖÀ»¸¸ÇÑxml°ªÀÌ ¾ø¾î¼­ ÀÌ°É·Î´ëÃ¼!
         	AladdinAPIUrl aUrl = new AladdinAPIUrl();
         	bDTO.setBook_category(aUrl.CATEGORY_ID); 
         	
@@ -100,7 +100,7 @@ public class AladdinApiMain extends DefaultHandler {
                 case "publisher":
                 	bDTO.setPublisher(content.toString());
                     break;
-               // case "searchCategoryName": //ì¹´í…Œê³ ë¦¬ë„£ì„ë§Œí•œê²Œì—†ì–´ì„œ ìœ„ì—ì„œ DAO ì²˜ë¦¬
+               // case "searchCategoryName": //Ä«Å×°í¸®³ÖÀ»¸¸ÇÑ°Ô¾ø¾î¼­ À§¿¡¼­ DAO Ã³¸®
                 	//bDTO.setBook_category(content.toString());
                 //    break;
                 case "author":

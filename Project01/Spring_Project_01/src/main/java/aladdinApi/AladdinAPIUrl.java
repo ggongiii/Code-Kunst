@@ -1,28 +1,28 @@
 //--------------------
-//ì•Œë¼ë”˜ì´ ì œê³µí•˜ëŠ” ì˜ˆì‹œ íŒŒì¼
+//¾Ë¶óµòÀÌ Á¦°øÇÏ´Â ¿¹½Ã ÆÄÀÏ
 //--------------------
-//ì°¸ê³ ìš©ìž„ .í”„ë¡œì íŠ¸ë•Œ ì‚­ì œì˜ˆì •!
+//Âü°í¿ëÀÓ .ÇÁ·ÎÁ§Æ®¶§ »èÁ¦¿¹Á¤!
 //--------------------
-//[ê¸°ë³¸ì œê³µí•˜ëŠ” ë©”ë‰´ì–¼]https://docs.google.com/document/d/1mX-WxuoGs8Hy-QalhHcvuV17n50uGI2Sg_GHofgiePE/edit 
-//[ì•Œë¼ë”˜í‚¤]https://www.aladin.co.kr/ttb/wblog_manage.aspx 
-//[ì•Œë¼ë”˜í‚¤]ttbyonex941928002
-//[ê°€ì ¸ì™€ì•¼í•  url] http://www.aladdin.co.kr/ttb/api/ItemList.aspx?
-//[ì°¸ê³ URL] http://www.aladin.co.kr/ttb/api/ItemLookUp.aspx?ttbkey=TTBKey&itemIdType=ISBN13&ItemId=ë„ì„œì˜ISBN&output=xml
-//[ì˜ˆì‹œISBN] 9791188331796
-//[ì°¸ê³ URLê°’ë„£ê¸°]http://www.aladin.co.kr/ttb/api/ItemLookUp.aspx?ttbkey=ttbyonex941928001&itemIdType=ISBN13&ItemId=9791188331796&output=xml
-//---ì¹´í…Œê³ ë¦¬ID---
+//[±âº»Á¦°øÇÏ´Â ¸Þ´º¾ó]https://docs.google.com/document/d/1mX-WxuoGs8Hy-QalhHcvuV17n50uGI2Sg_GHofgiePE/edit 
+//[¾Ë¶óµòÅ°]https://www.aladin.co.kr/ttb/wblog_manage.aspx 
+//[¾Ë¶óµòÅ°]ttbyonex941928002
+//[°¡Á®¿Í¾ßÇÒ url] http://www.aladdin.co.kr/ttb/api/ItemList.aspx?
+//[Âü°íURL] http://www.aladin.co.kr/ttb/api/ItemLookUp.aspx?ttbkey=TTBKey&itemIdType=ISBN13&ItemId=µµ¼­ÀÇISBN&output=xml
+//[¿¹½ÃISBN] 9791188331796
+//[Âü°íURL°ª³Ö±â]http://www.aladin.co.kr/ttb/api/ItemLookUp.aspx?ttbkey=ttbyonex941928001&itemIdType=ISBN13&ItemId=9791188331796&output=xml
+//---Ä«Å×°í¸®ID---
 /*
-55890	ê±´ê°•/ì·¨ë¯¸/ë ˆì €	êµ­ë‚´ë„ì„œ	ê±´ê°•/ì·¨ë¯¸/ë ˆì €		
-53532	ê³µì˜ˆ	êµ­ë‚´ë„ì„œ	ê±´ê°•/ì·¨ë¯¸/ë ˆì €	ê³µì˜ˆ	
-54709	ë†êµ¬	êµ­ë‚´ë„ì„œ	ê±´ê°•/ì·¨ë¯¸/ë ˆì €	êµ¬ê¸°	ë†êµ¬
-54710	ì•¼êµ¬	êµ­ë‚´ë„ì„œ	ê±´ê°•/ì·¨ë¯¸/ë ˆì €	êµ¬ê¸°	ì•¼êµ¬
-54708	ì¶•êµ¬	êµ­ë‚´ë„ì„œ	ê±´ê°•/ì·¨ë¯¸/ë ˆì €	êµ¬ê¸°	ì¶•êµ¬
-53514	ë‹¤ì´ì–´íŠ¸	êµ­ë‚´ë„ì„œ	ê±´ê°•/ì·¨ë¯¸/ë ˆì €	ë‹¤ì´ì–´íŠ¸	
-53523	ìˆ˜ì˜/ìˆ˜ìƒìŠ¤í¬ì¸ 	êµ­ë‚´ë„ì„œ	ê±´ê°•/ì·¨ë¯¸/ë ˆì €	ìˆ˜ì˜/ìˆ˜ìƒìŠ¤í¬ì¸ 	
-53535	ì·¨ë¯¸ê¸°íƒ€	êµ­ë‚´ë„ì„œ	ê±´ê°•/ì·¨ë¯¸/ë ˆì €	ì·¨ë¯¸ê¸°íƒ€	
-50831	ìœ ëŸ½ì—¬í–‰	êµ­ë‚´ë„ì„œ	ì—¬í–‰	ìœ ëŸ½ì—¬í–‰	
-50832	ì¼ë³¸ì—¬í–‰	êµ­ë‚´ë„ì„œ	ì—¬í–‰	ì¼ë³¸ì—¬í–‰	
-51012	ì„œì–‘ìŒì•…(í´ëž˜ì‹)	êµ­ë‚´ë„ì„œ	ì˜ˆìˆ /ëŒ€ì¤‘ë¬¸í™”	ìŒì•…	ì„œì–‘ìŒì•…!(í´ëž˜ì‹)
+55890	°Ç°­/Ãë¹Ì/·¹Àú	±¹³»µµ¼­	°Ç°­/Ãë¹Ì/·¹Àú		
+53532	°ø¿¹	±¹³»µµ¼­	°Ç°­/Ãë¹Ì/·¹Àú	°ø¿¹	
+54709	³ó±¸	±¹³»µµ¼­	°Ç°­/Ãë¹Ì/·¹Àú	±¸±â	³ó±¸
+54710	¾ß±¸	±¹³»µµ¼­	°Ç°­/Ãë¹Ì/·¹Àú	±¸±â	¾ß±¸
+54708	Ãà±¸	±¹³»µµ¼­	°Ç°­/Ãë¹Ì/·¹Àú	±¸±â	Ãà±¸
+53514	´ÙÀÌ¾îÆ®	±¹³»µµ¼­	°Ç°­/Ãë¹Ì/·¹Àú	´ÙÀÌ¾îÆ®	
+53523	¼ö¿µ/¼ö»ó½ºÆ÷Ã÷	±¹³»µµ¼­	°Ç°­/Ãë¹Ì/·¹Àú	¼ö¿µ/¼ö»ó½ºÆ÷Ã÷	
+53535	Ãë¹Ì±âÅ¸	±¹³»µµ¼­	°Ç°­/Ãë¹Ì/·¹Àú	Ãë¹Ì±âÅ¸	
+50831	À¯·´¿©Çà	±¹³»µµ¼­	¿©Çà	À¯·´¿©Çà	
+50832	ÀÏº»¿©Çà	±¹³»µµ¼­	¿©Çà	ÀÏº»¿©Çà	
+51012	¼­¾çÀ½¾Ç(Å¬·¡½Ä)	±¹³»µµ¼­	¿¹¼ú/´ëÁß¹®È­	À½¾Ç	¼­¾çÀ½¾Ç!(Å¬·¡½Ä)
 */
 
 
@@ -30,37 +30,37 @@ package aladdinApi;
 
 public class AladdinAPIUrl {
 
-	//----------í•„ìˆ˜ê°’------------
+	//----------ÇÊ¼ö°ª------------
     private static final String BASE_URL = "http://www.aladdin.co.kr/ttb/api/ItemList.aspx?";
     private static final String TTB_KEY = "ttbyonex941928001";
     String QUERY_TYPE = "Bestseller";
     // ------------------------------
- 		/* --ì¿¼ë¦¬íƒ€ìž… ë¦¬ìŠ¤íŠ¸--
- 		 * ItemNewAll : ì‹ ê°„ ì „ì²´ ë¦¬ìŠ¤íŠ¸ 
- 		 * ItemNewSpecial : ì£¼ëª©í•  ë§Œí•œ ì‹ ê°„ ë¦¬ìŠ¤íŠ¸ 
- 		 * Bestseller : ë² ìŠ¤íŠ¸ì…€ëŸ¬ 
- 		 * BlogBest : ë¸”ë¡œê±° ë² ìŠ¤íŠ¸ì…€ëŸ¬ (êµ­ë‚´ë„ì„œë§Œ ì¡°íšŒ ê°€ëŠ¥)
+ 		/* --Äõ¸®Å¸ÀÔ ¸®½ºÆ®--
+ 		 * ItemNewAll : ½Å°£ ÀüÃ¼ ¸®½ºÆ® 
+ 		 * ItemNewSpecial : ÁÖ¸ñÇÒ ¸¸ÇÑ ½Å°£ ¸®½ºÆ® 
+ 		 * Bestseller : º£½ºÆ®¼¿·¯ 
+ 		 * BlogBest : ºí·Î°Å º£½ºÆ®¼¿·¯ (±¹³»µµ¼­¸¸ Á¶È¸ °¡´É)
  		 */
-    //----------ì˜µì…˜ê°’-----------------
-    String CATEGORY_ID = "55890"; //ì¹´í…Œê³ ë¦¬ëŠ” ìƒë‹¨ì— ì •ë¦¬í•˜ê¸°
-    String VERSION = "20131101"; // ìµœì‹ ë²„ì „ì‚¬ìš©
-    //----------ë””í´íŠ¸ê°’ ( í•„ìš”ë¡œí•˜ë©´ apiì— ë„£ê¸° ê¸°ë³¸ê°’ì„ ì“¸ê±°ë¼ ë”°ë¡œ ì§€ì •ì•ˆí•¨)
+    //----------¿É¼Ç°ª-----------------
+    String CATEGORY_ID = "55890"; //Ä«Å×°í¸®´Â »ó´Ü¿¡ Á¤¸®ÇÏ±â
+    String VERSION = "20131101"; // ÃÖ½Å¹öÀü»ç¿ë
+    //----------µðÆúÆ®°ª ( ÇÊ¿ä·ÎÇÏ¸é api¿¡ ³Ö±â ±âº»°ªÀ» ¾µ°Å¶ó µû·Î ÁöÁ¤¾ÈÇÔ)
 	/*
-	 *--1.ì˜µì…˜ê°’-- 
-	 *Start 1ì´ìƒ, ì–‘ì˜ ì •ìˆ˜(ê¸°ë³¸ê°’:1) ê²€ìƒ‰ê²°ê³¼ ì‹œìž‘íŽ˜ì´ì§€ 
-	 *MaxResults 1ì´ìƒ 100ì´í•˜, ì–‘ì˜ ì •ìˆ˜(ê¸°ë³¸ê°’:10) ê²€ìƒ‰ê²°ê³¼ í•œ íŽ˜ì´ì§€ë‹¹ ìµœëŒ€ ì¶œë ¥ ê°œìˆ˜ 
-	 *--2.ì˜µì…˜ê°’--
-	 * SearchTarget Book(ê¸°ë³¸ê°’) : ë„ì„œ 
-	 * --3.ì˜µì…˜ê°’-- 
-	 * Output XML(ê¸°ë³¸ê°’) : REST XMLí˜•ì‹ ì¶œë ¥ë°©ë²•
-	 * --4.ì˜µì…˜ê°’-- 
-	 * Cover Big : í° í¬ê¸° : ë„ˆë¹„ 200px 
-	 * MidBig : ì¤‘ê°„ í° í¬ê¸° : ë„ˆë¹„ 150px 
-	 * Mid(ê¸°ë³¸ê°’) :ì¤‘ê°„ í¬ê¸° : ë„ˆë¹„ 85px 
-	 * Small : ìž‘ì€ í¬ê¸° : ë„ˆë¹„ 75px 
-	 * Mini : ë§¤ìš° ìž‘ì€ í¬ê¸° : ë„ˆë¹„ 65px 
-	 * None : ì—†ìŒ
-	 * í‘œì§€í¬ê¸°
+	 *--1.¿É¼Ç°ª-- 
+	 *Start 1ÀÌ»ó, ¾çÀÇ Á¤¼ö(±âº»°ª:1) °Ë»ö°á°ú ½ÃÀÛÆäÀÌÁö 
+	 *MaxResults 1ÀÌ»ó 100ÀÌÇÏ, ¾çÀÇ Á¤¼ö(±âº»°ª:10) °Ë»ö°á°ú ÇÑ ÆäÀÌÁö´ç ÃÖ´ë Ãâ·Â °³¼ö 
+	 *--2.¿É¼Ç°ª--
+	 * SearchTarget Book(±âº»°ª) : µµ¼­ 
+	 * --3.¿É¼Ç°ª-- 
+	 * Output XML(±âº»°ª) : REST XMLÇü½Ä Ãâ·Â¹æ¹ý
+	 * --4.¿É¼Ç°ª-- 
+	 * Cover Big : Å« Å©±â : ³Êºñ 200px 
+	 * MidBig : Áß°£ Å« Å©±â : ³Êºñ 150px 
+	 * Mid(±âº»°ª) :Áß°£ Å©±â : ³Êºñ 85px 
+	 * Small : ÀÛÀº Å©±â : ³Êºñ 75px 
+	 * Mini : ¸Å¿ì ÀÛÀº Å©±â : ³Êºñ 65px 
+	 * None : ¾øÀ½
+	 * Ç¥ÁöÅ©±â
 	 * 
 	 */
 
@@ -69,10 +69,10 @@ public class AladdinAPIUrl {
             + "ttbkey=" + TTB_KEY
             + "&QueryType=" + QUERY_TYPE
             + "&CategoryId=" + CATEGORY_ID
-            + "&start=" +  1 // ë””í´íŠ¸ê°‘ ì‚¬ìš©
-            + "&MaxResults=10" // ë””í´íŠ¸ê°’ ì‚¬ìš©
-            + "&SearchTarget=Book" // ë””í´íŠ¸ê°’ ì‚¬ìš©
-            + "&output=xml" // ë””í´íŠ¸ê°’ ì‚¬ìš©
+            + "&start=" +  1 // µðÆúÆ®°© »ç¿ë
+            + "&MaxResults=10" // µðÆúÆ®°ª »ç¿ë
+            + "&SearchTarget=Book" // µðÆúÆ®°ª »ç¿ë
+            + "&output=xml" // µðÆúÆ®°ª »ç¿ë
             + "&Version=" + VERSION;
         return url;
     }

@@ -1,17 +1,17 @@
 
 
 //--------------------
-//ì•Œë¼ë”˜ì´ ì œê³µí•˜ëŠ” ì˜ˆì‹œ íŒŒì¼
+//¾Ë¶óµòÀÌ Á¦°øÇÏ´Â ¿¹½Ã ÆÄÀÏ
 //--------------------
-//ì°¸ê³ ìš©ì„ .í”„ë¡œì íŠ¸ë•Œ ì‚­ì œì˜ˆì •!
+//Âü°í¿ëÀÓ .ÇÁ·ÎÁ§Æ®¶§ »èÁ¦¿¹Á¤!
 //--------------------
-//[ê¸°ë³¸ì œê³µí•˜ëŠ” ë©”ë‰´ì–¼]https://docs.google.com/document/d/1mX-WxuoGs8Hy-QalhHcvuV17n50uGI2Sg_GHofgiePE/edit 
-//[ì•Œë¼ë”˜í‚¤]https://www.aladin.co.kr/ttb/wblog_manage.aspx 
-//[ì•Œë¼ë”˜í‚¤]ttbyonex941928001
-//[ê°€ì ¸ì™€ì•¼í•  url] http://www.aladdin.co.kr/ttb/api/ItemList.aspx?
-//[ì°¸ê³ URL] http://www.aladin.co.kr/ttb/api/ItemLookUp.aspx?ttbkey=TTBKey&itemIdType=ISBN13&ItemId=ë„ì„œì˜ISBN&output=xml
-//[ì˜ˆì‹œISBN] 9791188331796
-//[ì°¸ê³ URLê°’ë„£ê¸°]http://www.aladin.co.kr/ttb/api/ItemLookUp.aspx?ttbkey=ttbyonex941928001&itemIdType=ISBN13&ItemId=9791188331796&output=xml
+//[±âº»Á¦°øÇÏ´Â ¸Ş´º¾ó]https://docs.google.com/document/d/1mX-WxuoGs8Hy-QalhHcvuV17n50uGI2Sg_GHofgiePE/edit 
+//[¾Ë¶óµòÅ°]https://www.aladin.co.kr/ttb/wblog_manage.aspx 
+//[¾Ë¶óµòÅ°]ttbyonex941928001
+//[°¡Á®¿Í¾ßÇÒ url] http://www.aladdin.co.kr/ttb/api/ItemList.aspx?
+//[Âü°íURL] http://www.aladin.co.kr/ttb/api/ItemLookUp.aspx?ttbkey=TTBKey&itemIdType=ISBN13&ItemId=µµ¼­ÀÇISBN&output=xml
+//[¿¹½ÃISBN] 9791188331796
+//[Âü°íURL°ª³Ö±â]http://www.aladin.co.kr/ttb/api/ItemLookUp.aspx?ttbkey=ttbyonex941928001&itemIdType=ISBN13&ItemId=9791188331796&output=xml
 
 package aladdinApi;
 import java.util.ArrayList;
@@ -28,8 +28,8 @@ import org.xml.sax.helpers.ParserAdapter;
 
 public class AladdinExampleAPI extends DefaultHandler {
 	public static List<Item> Items;
-	public Item item; 	//DTO ê°€ Itemì¸ë“¯?
-	private boolean inItemElement = false; //ì´ˆê¸°ê°’ flaseë¡œ ë‘ê³  
+	public Item item; 	//DTO °¡ ItemÀÎµí?
+	private boolean inItemElement = false; //ÃÊ±â°ª flase·Î µÎ°í 
 	private String tempValue;
 	
 	public AladdinExampleAPI( ){
@@ -40,19 +40,19 @@ public class AladdinExampleAPI extends DefaultHandler {
 	
 	
 	/*
-	 * ì‹œì‘ íƒœê·¸("<")ë¥¼ ë§Œë‚¬ì„ ë•Œ ë°œìƒí•˜ëŠ” ì´ë²¤íŠ¸
+	 * ½ÃÀÛ ÅÂ±×("<")¸¦ ¸¸³µÀ» ¶§ ¹ß»ıÇÏ´Â ÀÌº¥Æ®
 	 */
 	public void startElement(String namespace, String localName, String qName, Attributes atts) {
 		/*
 		 * namespace : uri
-		 * localname : DTOì— ìˆëŠ” ì†ì„±ì´ë¦„ì¸ë“¯
-		 * qName : ì†ì„±ëª… <-ì´ê±´ë­ëƒ
+		 * localname : DTO¿¡ ÀÖ´Â ¼Ó¼ºÀÌ¸§ÀÎµí
+		 * qName : ¼Ó¼º¸í <-ÀÌ°Ç¹¹³Ä
 		 */
 		if (localName.equals("item")) {
 			item = new Item();
-			inItemElement = true; // ë¡œì»¬ë„¤ì„ê³¼ DTOì™€ ë™ì¼í•˜ë©´ ì¡°ê±´ë°œìƒì¸ë“¯
+			inItemElement = true; // ·ÎÄÃ³×ÀÓ°ú DTO¿Í µ¿ÀÏÇÏ¸é Á¶°Ç¹ß»ıÀÎµí
 			
-			//ê·¸ê²Œì•„ë‹ˆë©´ ëª¨ë‘ ë¹ˆê°’ì„ ì±„ì›Œë„£ëŠ”ë‹¤ 
+			//±×°Ô¾Æ´Ï¸é ¸ğµÎ ºó°ªÀ» Ã¤¿ö³Ö´Â´Ù 
 		} else if (localName.equals("title")) {
 			tempValue = "";
 		} else if (localName.equals("isbn")) {
@@ -76,25 +76,25 @@ public class AladdinExampleAPI extends DefaultHandler {
 		} else if (localName.equals("itemPage")) {
 			tempValue = "";
 		}
-		//ì—¬ê¹Œì§€ 
-		//ì†ì„±ëª…ì„ ë‚´ DTOì— ë„£ì–´ì•¼í• ë“¯
+		//¿©±îÁö 
+		//¼Ó¼º¸íÀ» ³» DTO¿¡ ³Ö¾î¾ßÇÒµí
 	}
 	
 	
 	/*
-	 * íƒœê·¸ì™€ íƒœê·¸ ì‚¬ì´ì˜ ë‚´ìš©ì„ ì²˜ë¦¬
-	 * chì— xmlíŒŒì¼í˜•ì‹ì˜ ë°ì´í„°ê°€ ë“¤ì–´ê°€ìˆìŒ
+	 * ÅÂ±×¿Í ÅÂ±× »çÀÌÀÇ ³»¿ëÀ» Ã³¸®
+	 * ch¿¡ xmlÆÄÀÏÇü½ÄÀÇ µ¥ÀÌÅÍ°¡ µé¾î°¡ÀÖÀ½
 	 */
 	
 	
 	public void characters(char[] ch, int start, int length) throws SAXException{
-		tempValue = tempValue + new String(ch,start,length); // ë­ì§€ì´ê²Œ
+		tempValue = tempValue + new String(ch,start,length); // ¹¹ÁöÀÌ°Ô
 	} 
 	
 	
 	
 	/*
-	 * ë íƒœê·¸(">")ë¥¼ ë§Œë‚¬ì„ ë•Œ í˜¸ì¶œë˜ëŠ” í•¨ìˆ˜
+	 * ³¡ ÅÂ±×(">")¸¦ ¸¸³µÀ» ¶§ È£ÃâµÇ´Â ÇÔ¼ö
 	 */
 	public void endElement(String namespaceURI, String localName,String qName) {
 		if(inItemElement){
@@ -105,7 +105,7 @@ public class AladdinExampleAPI extends DefaultHandler {
 				inItemElement = false;
 			} 
 			else if (localName.equals("title")) {
-				item.setProduct_title(tempValue); // tempValue : ì´ë¯¸ ê° ì†ì„±ì˜ ê°’ë“¤ì´ ë“¤ì–´ìˆìŒ. titleì´ë©´ ì±… ì œëª©ì´ tempValueì— ë‹´ê²¨ìˆìŒ
+				item.setProduct_title(tempValue); // tempValue : ÀÌ¹Ì °¢ ¼Ó¼ºÀÇ °ªµéÀÌ µé¾îÀÖÀ½. titleÀÌ¸é Ã¥ Á¦¸ñÀÌ tempValue¿¡ ´ã°ÜÀÖÀ½
 			} 
 			else if (localName.equals("cover")) {
 				item.setProduct_cover(tempValue);

@@ -12,8 +12,6 @@
 	</div>
 	<div id="common_lnb">
 		<ul class="menu">
-			<li class="nav-item"><a href="${root}user/mypage"
-				class="nav-link">마이페이지</a></li>
 			<li class="nav-item"><a href="${root}user/login"
 				class="nav-link">로그인</a></li>
 			<li class="nav-item"><a href="${root}user/join" 
@@ -46,17 +44,6 @@
 
 <!-- 네비게이션 메뉴 -->
 <div class="nav-menu">
-	<div class="dropdown">
-		<a href="#">카테고리</a>
-		<div class="dropdown-content">
-			<a href="${root}board/viewpage">submenu01</a>
-			<a href="${root}board/viewpage">submenu02</a> 
-			<a href="${root}board/viewpage">submenu03</a>
-			<a href="${root}board/viewpage">submenu04</a> 
-			<a href="${root}board/viewpage">submenu05</a>
-		</div>
-	</div>
-	
 	<a href="${root}board/bestSeller">베스트셀러</a> 
 	<a href="${root}board/viewpage">신간도서</a> 
 	<a href="${root}board/viewpage">게시판</a>

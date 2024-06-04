@@ -24,21 +24,22 @@
 	margin-bottom: 20px;
 	text-align: center;
 }
-
-.book-list {
-	display: flex;
-	flex-direction: column; /* 가로가 아닌 세로 배열 */
-}
-
 .book-item {
+	box-shadow : 5px 5px 15px;
 	display: flex;
 	margin-bottom: 20px;
 	align-items: flex-start;
 	border: 1px solid #ccc;
 	padding: 10px;
 	width: 100%;
-	box-shadow: 100px 100px 100px black;
+	
 }
+.book-list {
+	display: flex;
+	flex-direction: column; /* 가로가 아닌 세로 배열 */
+}
+
+
 
 .book-item img {
 	width: 150px;

@@ -3,14 +3,23 @@ package kr.co.soldesk.beans;
 import javax.validation.constraints.Pattern;
 import javax.validation.constraints.Size;
 
-import lombok.Getter;
-import lombok.Setter;
 
-@Getter
-@Setter
+
+
 public class UserBean {
 	private int user_idx;
 	
+	
+	private boolean userIdExist;
+	
+	public boolean isUserIdExist() {
+		return userIdExist;
+	}
+
+	public void setUserIdExist(boolean userIdExist) {
+		this.userIdExist = userIdExist;
+	}
+
 	@Size(min = 2, max = 4)
 	@Pattern(regexp = "[°¡-ÆR]*")
 	private String user_name;

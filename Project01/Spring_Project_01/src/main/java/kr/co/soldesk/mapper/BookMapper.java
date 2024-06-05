@@ -8,9 +8,19 @@ import kr.co.soldesk.beans.BookDTO;
 
 public interface BookMapper {
 	
-	@Select("select board_info_idx, board_info_name,board_Info_name_en " +
-	         "from board_info_table " + 
-	         "order by board_info_idx")
+	@Select("select book_id"
+			+ "book_name,"
+			+ "isbn,"
+			+ "book_price,"
+			+ "publish_date,"
+			+ "book_pic,"
+			+ "book_info,"
+			+ "inventory,"
+			+ "publisher,"
+			+ "book_category,"
+			+ "author,"
+			+ "from book; " + 
+	         "order by book")
 	List<BookDTO> getTopMenuList();
 
 }

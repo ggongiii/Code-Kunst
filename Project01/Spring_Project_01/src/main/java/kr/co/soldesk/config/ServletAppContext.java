@@ -22,6 +22,7 @@ import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
 import kr.co.soldesk.interceptor.TopMenuInterceptor;
 import kr.co.soldesk.mapper.BoardMapper;
 import kr.co.soldesk.mapper.TopMenuMapper;
+import kr.co.soldesk.mapper.UserMapper;
 import kr.co.soldesk.service.TopMenuService;
 
 @Configuration // Spring MVC 프로젝트 설정
@@ -120,5 +121,11 @@ public class ServletAppContext implements WebMvcConfigurer {
 		res.setBasenames("/WEB-INF/properties/error_message");
 		return res;
 	}
-
+	
+	@Bean
+	public MapperFactoryBean<UserMapper> getUserMapper(SqlSessionFactory factory) throws Exception{
+		MapperFactoryBean<UserMapper> factoryBean = new MapperFactoryBean<UserMapper>(UserMapper.class);
+		factoryBean.setSqlSessionFactory(factory);
+		return factoryBean;
+	}
 } // class

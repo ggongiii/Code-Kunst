@@ -1,33 +1,19 @@
-let bannerIndex = 0;
-let productIndex = 0;
-let bestsellerIndex = 0;
+let currentSlide = 0;
 
-function slide(direction, type) {
-    if (type === 'banner') {
-        const banners = document.querySelector('.banner-inner');
-        const bannerCount = banners.children.length;
-        bannerIndex = (bannerIndex + direction + bannerCount) % 2; // 2개의 슬라이드만 사용
-        banners.style.transform = `translateX(-${bannerIndex * 100}%)`;
-    } else if (type === 'products') {
-        const products = document.querySelectorAll('.products-inner')[0];
-        const productCount = products.children.length;
-        productIndex = (productIndex + direction + productCount) % 2; // 2개의 슬라이드만 사용
-        products.style.transform = `translateX(-${productIndex * 100}%)`;
-    } else if (type === 'bestseller') {
-        const bestsellers = document.querySelectorAll('.products-inner')[1];
-        const bestsellerCount = bestsellers.children.length;
-        bestsellerIndex = (bestsellerIndex + direction + bestsellerCount) % 2; // 2개의 슬라이드만 사용
-        bestsellers.style.transform = `translateX(-${bestsellerIndex * 100}%)`;
+function slide(direction) {
+    const slides = document.querySelectorAll('.book-slide');
+    const totalSlides = slides.length;
+    
+    currentSlide += direction;
+    if (currentSlide < 0) {
+        currentSlide = totalSlides - 1;
+    } else if (currentSlide >= totalSlides) {
+        currentSlide = 0;
     }
+    
+    const sliderInner = document.querySelector('.book-slider-inner');
+    sliderInner.style.transform = `translateX(-${currentSlide * 100}%)`;
 }
-
-// 2초마다 자동으로 슬라이드
-setInterval(() => {
-    slide(1, 'banner');
-    slide(1, 'products');
-    slide(1, 'bestseller');
-}, 2000);
-
 
 function openSection(evt, sectionName) {
     // 모든 탭 콘텐츠 숨기기
@@ -50,4 +36,3 @@ function openSection(evt, sectionName) {
 document.addEventListener("DOMContentLoaded", function() {
     document.querySelector(".tablink").click();
 });
-

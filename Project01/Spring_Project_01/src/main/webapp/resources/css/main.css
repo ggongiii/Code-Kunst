@@ -1,9 +1,120 @@
-/* 컨테이너 */
+/* General container styles */
 .container {
-    width: 90%;
+    max-width: 1280px;
     margin: 0 auto;
-    overflow: hidden;
+    padding: 20px;
+}
+
+/* 메뉴바 */
+.menu-bar {
+    display: flex;
+    justify-content: center;
+    
+}
+
+
+.vertical-line {
+    border-left: 2px solid;
+    height: 50px;
+}
+
+/* 탭 콘텐츠 */
+.tabcontent {
+    display: none;
+    animation: fadeEffect 1s;
+    padding: 20px;
+    background-color: #e3f0f8; /* 탭 콘텐츠 영역의 배경색 */
+}
+
+.tabcontent .products {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+}
+
+.tabcontent .product {
+    text-align: center;
+    width: 200px;
+    margin: 10px;
+    background-color: #fff;
+    padding: 10px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+
+.tabcontent .product img {
+    width: 100%;
+    height: auto;
+}
+
+.tabcontent .product p {
+    margin: 10px 0;
+}
+
+/* Fade in tabs */
+@keyframes fadeEffect {
+    from {opacity: 0;}
+    to {opacity: 1;}
+}
+
+/* New CSS for the book slider */
+.book-slider {
     position: relative;
+    width: 100%;
+    overflow: hidden;
+}
+
+.book-slider-inner {
+    display: flex;
+    transition: transform 0.5s ease;
+}
+
+.book-slide {
+    min-width: 100%;
+    box-sizing: border-box;
+}
+
+.book-box {
+    display: flex;
+    border: 1px solid #ddd;
+    padding: 20px;
+    background-color: #f1f3f2;
+}
+
+.book-image {
+    max-width: 150px;
+    margin-right: 20px;
+}
+
+.book-details {
+    flex: 1;
+}
+
+.book-details h3 {
+    margin: 0 0 10px;
+}
+
+.book-details p {
+    margin: 5px 0;
+}
+
+.btn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: rgba(0,0,0,0.5);
+    color: #fff;
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+    z-index: 1000;
+}
+
+.btn.prev {
+    left: 10px;
+}
+
+.btn.next {
+    right: 10px;
 }
 
 /* 메뉴바 */
@@ -16,12 +127,12 @@
 
 .menu-bar .tablink {
     background-color: #4CAF50; /* 기존의 배경색 */
-    color: white;
+    color: black;
     border: none;
-    padding: 14px 20px;
+    width:100%;
     cursor: pointer;
     transition: background-color 0.3s;
-    font-size: 16px;
+    font-size:15px;
 }
 
 .menu-bar .tablink:hover {
@@ -30,7 +141,7 @@
 
 /* active 클래스 추가 */
 .menu-bar .tablink.active {
-	background: linear-gradient(#4CAF50,#4CAF50,#4CAF50, #9acd32); /* 활성화된 상태의 배경색 */
+	background:#e3f0f8; /* 활성화된 상태의 배경색 */
 }
 
 /* 탭 콘텐츠 */

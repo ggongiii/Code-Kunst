@@ -44,10 +44,19 @@
 
 <!-- 네비게이션 메뉴 -->
 <div class="nav-menu">
-	<a href="${root}board/bestSeller">베스트셀러</a> 
-	<a href="${root}board/viewpage">신간도서</a> 
-	<a href="${root}board/viewpage">게시판</a>
+		<c:forEach var='obj' items="${topMenuList}">
+				<li class="nav-item">
+				<a href="${root}board/main?board_info_idx=${obj.board_info_idx}"
+					class="nav-link">${obj.board_info_name}</a></li>
+		</c:forEach>
 </div>
+
+
+
+<%-- 	<a href="${root}board/bestSeller">베스트셀러</a> 
+	<a href="${root}board/viewpage">신간도서</a> 
+	<a href="${root}board/viewpage">게시판</a> --%>
+
 </body>
 
 

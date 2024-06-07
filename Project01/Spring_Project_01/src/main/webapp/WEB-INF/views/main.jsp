@@ -22,39 +22,22 @@
         <div class="book-slider">
             <button class="btn prev" onclick="slide(-1)">&lt;</button>
             <div class="book-slider-inner">
-                <div class="book-slide">
-                    <div class="book-box">
-                        <img src="image/sample_450.jpg" alt="책 1" class="book-image">
-                        <div class="book-details">
-                            <h3>책 제목 1</h3>
-                            <p>저자: 저자 1</p>
-                            <p>판매가: 19,800원</p>
+                <c:forEach var="book" items="${bookList}">
+                    <div class="book-slide">
+                        <div class="book-box">
+                            <img src="${book.book_pic}" alt="${book.book_name}" class="book-image">
+                            <div class="book-details">
+                                <h3>${book.book_name}</h3>
+                                <p>저자: ${book.author}</p>
+                                <p>판매가: ${book.book_price}원</p>
+                            </div>
                         </div>
                     </div>
-                </div>
-                <div class="book-slide">
-                    <div class="book-box">
-                        <img src="image/sample_450.jpg" alt="책 2" class="book-image">
-                        <div class="book-details">
-                            <h3>책 제목 2</h3>
-                            <p>저자: 저자 2</p>
-                            <p>판매가: 19,800원</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="book-slide">
-                    <div class="book-box">
-                        <img src="image/sample_450.jpg" alt="책 3" class="book-image">
-                        <div class="book-details">
-                            <h3>책 제목 3</h3>
-                            <p>저자: 저자 3</p>
-                            <p>판매가: 19,800원</p>
-                        </div>
-                    </div>
-                </div>
+                </c:forEach>
             </div>
             <button class="btn next" onclick="slide(1)">&gt;</button>
         </div>
+    </div>
     </div>
     
     

@@ -21,6 +21,7 @@ import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
 
 import kr.co.soldesk.interceptor.TopMenuInterceptor;
 import kr.co.soldesk.mapper.BoardMapper;
+import kr.co.soldesk.mapper.BookMapper;
 import kr.co.soldesk.mapper.TopMenuMapper;
 import kr.co.soldesk.mapper.UserMapper;
 import kr.co.soldesk.service.TopMenuService;
@@ -89,6 +90,13 @@ public class ServletAppContext implements WebMvcConfigurer {
 		factoryBean.setSqlSessionFactory(factory);
 		return factoryBean;
 	}
+	
+	   @Bean
+	   public MapperFactoryBean<BookMapper> getBookMapper(SqlSessionFactory factory) throws Exception {
+	       MapperFactoryBean<BookMapper> factoryBean = new MapperFactoryBean<BookMapper>(BookMapper.class);
+	       factoryBean.setSqlSessionFactory(factory);
+	       return factoryBean;
+	   }
 
 	@Bean
 	public MapperFactoryBean<TopMenuMapper> getTopMenuMapper(SqlSessionFactory factory) throws Exception {

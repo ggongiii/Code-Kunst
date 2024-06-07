@@ -12,6 +12,8 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 import kr.co.soldesk.beans.UserBean;
+import kr.co.soldesk.service.UserService;
+import kr.co.soldesk.validator.UserValidator;
 
 @Controller
 @RequestMapping("/user")
@@ -33,7 +35,7 @@ public class UserController {
 		// configureViewResolvers 메서드에서 그렇게 설정했기 때문임
 	} // method
 	
-	  @PostMapping("join_pro") // GetMapping 아님
+	 @PostMapping("join_pro") // GetMapping 아님
 	   public String myJoinPro(@Valid @ModelAttribute("joinUserBean") UserBean joinUserBean
 	         // 위 코드는 UserBean joinUserBean = new UserBean();과 같음
 	         , BindingResult result) {
@@ -41,13 +43,13 @@ public class UserController {
 	         // 유효성 검사에서 에러로 판단된 경우
 	         return "user/join";
 	      } // if
-	      
-	      userService.addUserInfo(joinUserBean);
+	      UserService.addUserInfo(joinUserBean); // db에 넣기
 	      return "user/join_success";
 	      // WEB-INF / view / user 폴더의 join_success.jsp로 이동함
 	      // 그 이유는 ServletAppContext 클래스의
 	      // configureViewResolvers 메서드에서 그렇게 설정했기 때문임
 	   } // method
+
 	   
 	   @GetMapping("/modify")
 	   public String myModify_user() {
@@ -68,7 +70,7 @@ public class UserController {
 	   // 유효성 검사를 위해 필요함 :  Validator를 등록하는 역할
 	   @InitBinder // 최초로 읽고 감
 	   public void initBinder(WebDataBinder binder) {
-	      UserValidato validator1 = new UserValidator();
+	      UserValidator validator1 = new UserValidator();
 	      binder.addValidators(validator1);
 	   } // method
 	

@@ -46,7 +46,8 @@
 <div class="nav-menu">
 		<c:forEach var='obj' items="${topMenuList}">
 		
-				<a href="${root}board/bestSeller?page=${obj.board_info_idx}&name=${obj.board_Info_name_en}"> ${obj.board_info_name}</a>
+				<a href="${root}board/page?page=${obj.board_info_idx}"> ${obj.board_info_name}</a>
+				
 	
 		</c:forEach>
 </div>

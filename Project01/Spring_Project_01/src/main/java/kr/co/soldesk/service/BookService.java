@@ -15,7 +15,10 @@ public class BookService {
     private BookDAO bookDAO;
     
     public List<BookDTO> getBookList()  {
-    	List<BookDTO> bookList = bookDAO.getBookList();
-        return bookList;
+        return bookDAO.getBookList();
+    }
+    
+    public BookDTO getBookById(int bookId) {
+        return bookDAO.getBookById(bookId);
     }
 }

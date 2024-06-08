@@ -16,7 +16,7 @@ public class MainController {
     public String myMain(Model model) {
         model.addAttribute("bookList", bookService.getBookList());
         // 필요한 경우 다른 리스트를 추가
-        model.addAttribute("recommendedBooks", bookService.getBookList()); // 예시 데이터
+        model.addAttribute("soccer", bookService.getBookList()); // 예시 데이터
         model.addAttribute("newReleases", bookService.getBookList()); // 예시 데이터
         model.addAttribute("steadySellers", bookService.getBookList()); // 예시 데이터
         model.addAttribute("comics", bookService.getBookList()); // 예시 데이터

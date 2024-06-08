@@ -15,6 +15,8 @@
 <link href="../css/main.css" rel="stylesheet" type="text/css" />
 <!-- 사이드바css -->
 <link href="../css/sidebar.css" rel="stylesheet" type="text/css" />
+
+<link href="../css/bottom.css" rel="stylesheet" type="text/css" />
 <!-- 페이지css -->
 <link href="../css/page.css" rel="stylesheet" type="text/css" />
 

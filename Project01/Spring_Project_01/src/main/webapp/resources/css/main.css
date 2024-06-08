@@ -6,12 +6,11 @@
 }
 
 /* ¸Þ´º¹Ù */
-.menu-bar {
-    display: flex;
-    justify-content: center;
-    
-}
-
+/* °¡°Ý¸¸ span°ªµÖ¼­ »¡°£±Û¾¾·Î º¯°æ */
+.book-price {
+        color: red;
+        font-weight: bold;
+    }
 
 .vertical-line {
     border-left: 2px solid;
@@ -88,6 +87,10 @@
 .book-details {
     flex: 1;
 }
+ .book-details > h3 {
+        font-weight: bold;
+        text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.5);
+    }
 
 .book-details h3 {
     margin: 0 0 10px;
@@ -132,7 +135,9 @@
     width:100%;
     cursor: pointer;
     transition: background-color 0.3s;
-    font-size:15px;
+    font-size:25px;
+    font-weight:bold;
+    text-shadow: 1px 1px 1px white;
 }
 
 .menu-bar .tablink:hover {

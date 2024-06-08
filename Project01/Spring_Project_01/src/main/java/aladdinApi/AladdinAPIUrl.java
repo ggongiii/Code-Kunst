@@ -42,7 +42,8 @@ public class AladdinAPIUrl {
  		 * BlogBest : 블로거 베스트셀러 (국내도서만 조회 가능)
  		 */
     //----------옵션값-----------------
-    String CATEGORY_ID = "55890"; //카테고리는 상단에 정리하기
+    String CATEGORY_ID = "51012"; //카테고리는 상단에 정리하기
+    
     String VERSION = "20131101"; // 최신버전사용
     String COVER = "Big"; //화질이 안좋아서 큰 거가져와야댐
     //----------디폴트값 ( 필요로하면 api에 넣기 기본값을 쓸거라 따로 지정안함)
@@ -71,7 +72,7 @@ public class AladdinAPIUrl {
             + "&QueryType=" + QUERY_TYPE
             + "&CategoryId=" + CATEGORY_ID
             + "&start=" +  1 // 디폴트갑 사용
-            + "&MaxResults=10" // 디폴트값 사용
+            + "&MaxResults=" + 20 // 디폴트값 사용
             + "&SearchTarget=Book" // 디폴트값 사용
             + "&output=xml" // 디폴트값 사용
             + "&Version=" + VERSION

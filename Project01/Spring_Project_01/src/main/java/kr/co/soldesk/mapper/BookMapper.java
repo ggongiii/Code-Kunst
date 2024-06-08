@@ -21,6 +21,21 @@ public interface BookMapper {
            + "FROM book "
            + "ORDER BY book_id")
    List<BookDTO> getBookList(); //getBookListø°¿˙¿Â
+   
+   @Select("SELECT book_id,"
+   		+ " book_name,"
+   		+ " isbn,"
+   		+ " book_price,"
+   		+ " publish_date,"
+   		+ " book_pic,"
+   		+ " book_info,"
+   		+ " inventory,"
+   		+ " publisher,"
+   		+ " book_category,"
+   		+ " author"
+   		+ " FROM book"
+   		+ " WHERE book_id = #{bookId}")
+   BookDTO getBookById(int bookId);
  
 
 }

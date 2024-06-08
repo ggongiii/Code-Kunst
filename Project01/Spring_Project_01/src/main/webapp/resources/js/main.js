@@ -30,6 +30,16 @@ function openSection(evt, sectionName) {
     // 선택된 섹션 보여주기
     document.getElementById(sectionName).style.display = "block";
     evt.currentTarget.className += " active";
+    
+    // 첫 10개의 책만 노출
+    var books = document.getElementById(sectionName).getElementsByClassName("product");
+    for (i = 0; i < books.length; i++) {
+        if (i < 10) {
+            books[i].style.display = "block";
+        } else {
+            books[i].style.display = "none";
+        }
+    }
 }
 
 // 기본으로 첫 번째 탭 열기

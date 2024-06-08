@@ -91,7 +91,7 @@ public class ServletAppContext implements WebMvcConfigurer {
 		return factoryBean;
 	}
 	
-	   @Bean
+	@Bean
 	   public MapperFactoryBean<BookMapper> getBookMapper(SqlSessionFactory factory) throws Exception {
 	       MapperFactoryBean<BookMapper> factoryBean = new MapperFactoryBean<BookMapper>(BookMapper.class);
 	       factoryBean.setSqlSessionFactory(factory);
@@ -101,6 +101,13 @@ public class ServletAppContext implements WebMvcConfigurer {
 	@Bean
 	public MapperFactoryBean<TopMenuMapper> getTopMenuMapper(SqlSessionFactory factory) throws Exception {
 		MapperFactoryBean<TopMenuMapper> factoryBean = new MapperFactoryBean<TopMenuMapper>(TopMenuMapper.class);
+		factoryBean.setSqlSessionFactory(factory);
+		return factoryBean;
+	}
+	
+	@Bean
+	public MapperFactoryBean<UserMapper> getUserMapper(SqlSessionFactory factory) throws Exception{
+		MapperFactoryBean<UserMapper> factoryBean = new MapperFactoryBean<UserMapper>(UserMapper.class);
 		factoryBean.setSqlSessionFactory(factory);
 		return factoryBean;
 	}
@@ -130,10 +137,5 @@ public class ServletAppContext implements WebMvcConfigurer {
 		return res;
 	}
 	
-	@Bean
-	public MapperFactoryBean<UserMapper> getUserMapper(SqlSessionFactory factory) throws Exception{
-		MapperFactoryBean<UserMapper> factoryBean = new MapperFactoryBean<UserMapper>(UserMapper.class);
-		factoryBean.setSqlSessionFactory(factory);
-		return factoryBean;
-	}
+	
 } // class

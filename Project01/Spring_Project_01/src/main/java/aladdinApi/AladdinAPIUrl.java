@@ -44,6 +44,7 @@ public class AladdinAPIUrl {
     //----------옵션값-----------------
     String CATEGORY_ID = "55890"; //카테고리는 상단에 정리하기
     String VERSION = "20131101"; // 최신버전사용
+    String COVER = "Big"; //화질이 안좋아서 큰 거가져와야댐
     //----------디폴트값 ( 필요로하면 api에 넣기 기본값을 쓸거라 따로 지정안함)
 	/*
 	 *--1.옵션값-- 
@@ -73,7 +74,8 @@ public class AladdinAPIUrl {
             + "&MaxResults=10" // 디폴트값 사용
             + "&SearchTarget=Book" // 디폴트값 사용
             + "&output=xml" // 디폴트값 사용
-            + "&Version=" + VERSION;
+            + "&Version=" + VERSION
+        	+ "&Cover=" + COVER;
         return url;
     }
 	

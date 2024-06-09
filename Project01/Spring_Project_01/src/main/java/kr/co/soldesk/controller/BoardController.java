@@ -1,5 +1,7 @@
 package kr.co.soldesk.controller;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -58,8 +60,11 @@ public class BoardController {
     } // method
     
     @GetMapping("/page")
-    public String page() {
-        return "board/page";
+    public String page(Model model) {
+    	 model.addAttribute("bookList", bookService.getBookList());
+         return "board/page";
+    	
+
         // WEB-INF / view / board 폴더의 page.jsp로 이동함
         // 그 이유는 ServletAppContext 클래스의
         // configureViewResolvers 메서드에서 그렇게 설정했기 때문임
@@ -69,7 +74,11 @@ public class BoardController {
     public String bookDetail(@RequestParam("bookId") int bookId, Model model) {
         BookDTO book = bookService.getBookById(bookId);
         model.addAttribute("book", book);
+
+        List<BookDTO> recommendedBooks = bookService.getRandomBooksByCategory(book.getBook_category(), 5);
+        model.addAttribute("recommendedBooks", recommendedBooks);
+
         return "board/bookDetail";
-    } // method
+    }
     
 } // class

@@ -21,64 +21,52 @@
 <link href="../css/page.css" rel="stylesheet" type="text/css" />
 
 <!-- ---------- -->
-<!-- 폰트어썸 -->
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 
-<title>bestSeller</title>
+<title>page</title>
 </head>
 <body>
 
    <!-- top_menu -->
    <c:import url="/WEB-INF/views/include/top_menu.jsp" />
+   
    <div class="main-container">
-      <!-- 사이드바 -->
-      <c:import url="/WEB-INF/views/include/sideBar.jsp" />
       <div class="content">
          <!-- 베스트셀러 섹션 -->
          <div class="bestseller-section">
             <h2>월간 베스트셀러</h2>
+           
             <div class="book-list">
-               <div class="book-item">
-                  <img src="../image/sample_150.jpg" alt="책 이미지">
-                  <div class="book-details">
-                     <div class="book-title">책 제목</div>
-                     <div class="book-desc">책 설명 1책 설명 1책 설명 1책 설명 1책 설명 1책 설명 1책 설명 1책 설명 1책 설명 1책 설명 1책 설명 1책 설명 1책 설명 1책 설명 1책 설명 1책 설명 1책 설명 1책 설명 1책 설명 1책 설명 1책 설명 1책 설명 1책 설명 1책 설명 1책 설명 1책 설명 1책 설명 1책 설명 1책 설명 1책 설명 1책 설명 1책 설명 1책 설명 1책 설명 1책 설명 1책 설명 1책 설명 1책 설명 1책 설명 1책 설명 1책 설명 1책 설명 1책 설명 1책 설명 1책 설명 1책 설명 1책 설명 1책 설명 1책 설명 1책 설명 1책 설명 1책 설명 1책 설명 1책 설명 1책 설명 1책 설명 1책 설명 1책 설명 1책 설명 1책 설명 1책 설명 1책 설명 1책 설명 1책 설명 1책 설명 1책 설명 1책 설명 1책 설명 1책 설명 1책 설명 1책 설명 1책 설명 1책 설명 1책 설명 1책 설명 1책 설명 1책 설명 1책 설명 1책 설명 1책 설명 1책 설명 1책 설명 1책 설명 1책 설명 1</div>
-                     <div class="book-price">판매가: 10,000원</div>
-                     <button class="cart-btn">장바구니 담기</button>
-                  </div>
-               </div>
-               <div class="book-item">
-                  <img src="../image/sample_150.jpg" alt="책 이미지">
-                  <div class="book-details">
-                     <div class="book-title">책 제목 1</div>
-                     <div class="book-desc">책 설명 1</div>
-                     <div class="book-price">판매가: 10,000원</div>
-                     <button class="cart-btn">장바구니 담기</button>
-                  </div>
-               </div>
-               <div class="book-item">
-                  <img src="../image/sample_150.jpg" alt="책 이미지">
-                  <div class="book-details">
-                     <div class="book-title">책 제목 1</div>
-                     <div class="book-desc">책 설명 1</div>
-                     <div class="book-price">판매가: 10,000원</div>
-                     <button class="cart-btn">장바구니 담기</button>
-                  </div>
-               </div>
-               <div class="book-item">
-                  <img src="../image/sample_150.jpg" alt="책 이미지">
-                  <div class="book-details">
-                     <div class="book-title">책 제목 1</div>
-                     <div class="book-desc">책 설명 1</div>
-                     <div class="book-price">판매가: 10,000원</div>
-                     <button class="cart-btn">장바구니 담기</button>
-                  </div>
-               </div>
-               <!-- 더 많은 책 아이템 추가 -->
+            
+	            <c:forEach var="book" items="${bookList}">
+	            <c:if test="${book.book_category == '54708'}">
+	               <div class="book-item">
+	               <a href="board/bookDetail?bookId=${book.book_id}">
+	                  <img src="${book.book_pic}" alt="${book.book_name}" class="book-image"></a>
+	                  <div class="book-details">
+	                     <p style="font-weight: bolder;">${book.book_name}</p>
+	                  	 <hr>
+	                     <p>판매가: <span class="book-price">${book.book_price}</span>원 (${book.author}) </p>
+	                     <br>
+	                     <p>${book.book_info}</p>  
+	                  </div>
+	               </div>
+	               </c:if>
+	            </c:forEach>	         
             </div>
          </div>
       </div>
    </div>
+   
+   
+   
+      <!-- 사이드바 -->
+      <c:import url="/WEB-INF/views/include/sideBar.jsp" />             
+      <c:import url="/WEB-INF/views/include/bottom_info.jsp" />  
+               
+               <!-- 더 많은 책 아이템 추가 -->
+            
+         
+   
 
 </body>
 </html>

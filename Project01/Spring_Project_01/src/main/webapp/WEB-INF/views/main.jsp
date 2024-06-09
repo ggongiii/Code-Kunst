@@ -12,32 +12,7 @@
 <link href="css/bottom.css" rel="stylesheet" type="text/css" />
 <script src="js/main.js"></script>
 <script>
-function openSection(evt, sectionName) {
-    // 모든 탭 콘텐츠 숨기기
-    var i, tabcontent, tablinks;
-    tabcontent = document.getElementsByClassName("tabcontent");
-    for (i = 0; i < tabcontent.length; i++) {
-        tabcontent[i].style.display = "none";
-    }
-    // 모든 탭 링크의 활성화 상태 제거
-    tablinks = document.getElementsByClassName("tablink");
-    for (i = 0; i < tablinks.length; i++) {
-        tablinks[i].className = tablinks[i].className.replace(" active", "");
-    }
-    // 선택된 섹션 보여주기
-    document.getElementById(sectionName).style.display = "block";
-    evt.currentTarget.className += " active";
-    
-    // 첫 10개의 책만 노출
-    var books = document.getElementById(sectionName).getElementsByClassName("product");
-    for (i = 0; i < books.length; i++) {
-        if (i < 10) {
-            books[i].style.display = "block";
-        } else {
-            books[i].style.display = "none";
-        }
-    }
-}
+
 
 // 기본으로 첫 번째 탭 열기
 document.addEventListener("DOMContentLoaded", function() {
@@ -47,7 +22,7 @@ document.addEventListener("DOMContentLoaded", function() {
 </head>
 <body>
     <c:import url="/WEB-INF/views/include/top_menu.jsp" />
-    <c:import url="/WEB-INF/views/include/sideBar.jsp" />
+
     
     <div class="container">
         <br><br><br>
@@ -58,16 +33,14 @@ document.addEventListener("DOMContentLoaded", function() {
                 <c:forEach var="book" items="${bookList}">
                     <div class="book-slide">
                         <div class="book-box">
-                            <img src="${book.book_pic}" alt="${book.book_name}" class="book-image">
+                            <a href="board/bookDetail?bookId=${book.book_id}">
+                            <img src="${book.book_pic}" alt="${book.book_name}" class="book-image"> </a>
                             <div class="book-details">
-                                <h3>${book.book_name}</h3>
+                            <p style="font-weight: bolder;">${book.book_name}</p>
                                 <hr>
                                 <p>판매가: <span class="book-price">${book.book_price}</span>원 (${book.author}) </p>
                                 <br>
-                                <p>${book.book_info}</p>
-                            
-                                
-                                
+                                <p>${book.book_info}</p>                
                             </div>
                         </div>
                     </div>
@@ -92,7 +65,7 @@ document.addEventListener("DOMContentLoaded", function() {
         <div id="md-recommended" class="tabcontent">
             <div class="products">
                 <c:forEach var="book" items="${bookList}">
-                    <c:if test="${book.book_category == '55890'}"> <!-- 건강 -->
+                    <c:if test="${book.book_category eq '건강'}"> <!-- 건강 -->
                         <div class="product">
                             <a href="board/bookDetail?bookId=${book.book_id}"><img src="${book.book_pic}" alt="${book.book_name}"></a>
                             <p style="font-weight: bolder;">${book.book_name}</p>
@@ -108,9 +81,9 @@ document.addEventListener("DOMContentLoaded", function() {
         <div id="new-releases" class="tabcontent">
             <div class="products">
                 <c:forEach var="book" items="${bookList}">
-                    <c:if test="${book.book_category == '54708'}"> <!-- 축구 -->
+                    <c:if test="${book.book_category eq '축구'}"> <!-- 축구 -->
                         <div class="product">
-                            <a href="#"><img src="${book.book_pic}" alt="${book.book_name}"></a>
+                            <a href="board/bookDetail?bookId=${book.book_id}"><img src="${book.book_pic}" alt="${book.book_name}"></a>
                             <p style="font-weight: bolder;">${book.book_name}</p>
                             <hr>
                             <p>저자: ${book.author}</p>
@@ -124,9 +97,9 @@ document.addEventListener("DOMContentLoaded", function() {
         <div id="steady-sellers" class="tabcontent">
             <div class="products">
                 <c:forEach var="book" items="${bookList}">
-                    <c:if test="${book.book_category == '50832'}"> <!-- 일본여행 -->
+                    <c:if test="${book.book_category eq '일본여행'}"> <!-- 일본여행 -->
                         <div class="product">
-                            <a href="#"><img src="${book.book_pic}" alt="${book.book_name}"></a>
+                            <a href="board/bookDetail?bookId=${book.book_id}"><img src="${book.book_pic}" alt="${book.book_name}"></a>
                             <p style="font-weight: bolder;">${book.book_name}</p>
                             <hr>
                             <p>저자: ${book.author}</p>
@@ -140,9 +113,9 @@ document.addEventListener("DOMContentLoaded", function() {
         <div id="comics" class="tabcontent">
             <div class="products">
                 <c:forEach var="book" items="${bookList}">
-                    <c:if test="${book.book_category == '51012'}"> <!-- 서양음악 -->
+                    <c:if test="${book.book_category eq '서양음악'}"> <!-- 서양음악 -->
                         <div class="product">
-                            <a href="#"><img src="${book.book_pic}" alt="${book.book_name}"></a>
+                            <a href="board/bookDetail?bookId=${book.book_id}"><img src="${book.book_pic}" alt="${book.book_name}"></a>
                             <p style="font-weight: bolder;">${book.book_name}</p>
                             <hr>
                             <p>저자: ${book.author}</p>
@@ -155,5 +128,6 @@ document.addEventListener("DOMContentLoaded", function() {
     </div>
 
     <c:import url="/WEB-INF/views/include/bottom_info.jsp" />
+        <c:import url="/WEB-INF/views/include/sideBar.jsp" />
 </body>
 </html>

@@ -7,9 +7,7 @@
 
 <body>
 <div class="header">
-	<div class="logo">
-		<img src="" alt="로고">
-	</div>
+	
 	<div id="common_lnb">
 		<ul class="menu">
 			<li class="nav-item"><a href="${root}user/login"
@@ -35,7 +33,14 @@
 </div>
 
 <!-- 검색 바 -->
+
+		
+	
+
 <div class="search-bar">
+<a href="${root}"
+				class="nav-link">
+<img src="${root}image/logo.png" alt="로고" class="logo"></a>
 	<form action="#">
 		<input type="text" placeholder="통합검색"> <input type="submit"
 			value="검색">
@@ -46,7 +51,7 @@
 <div class="nav-menu">
 		<c:forEach var='obj' items="${topMenuList}">
 		
-				<a href="${root}board/page?page=${obj.board_info_idx}"> ${obj.board_info_name}</a>
+				<a href="${root}board/page?=${obj.board_info_idx}"> ${obj.board_info_name}</a>
 				
 	
 		</c:forEach>

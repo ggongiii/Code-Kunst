@@ -1,12 +1,11 @@
 package kr.co.soldesk.mapper;
 
 import java.util.List;
-
 import org.apache.ibatis.annotations.Select;
 import kr.co.soldesk.beans.BookDTO;
 
 public interface BookMapper {
-   
+
    @Select("SELECT book_id, "
            + "book_name, "
            + "isbn, "
@@ -20,22 +19,35 @@ public interface BookMapper {
            + "author "
            + "FROM book "
            + "ORDER BY book_id")
-   List<BookDTO> getBookList(); //getBookList에저장
+   List<BookDTO> getBookList(); //getBookList에 저장
    
-   @Select("SELECT book_id,"
-   		+ " book_name,"
-   		+ " isbn,"
-   		+ " book_price,"
-   		+ " publish_date,"
-   		+ " book_pic,"
-   		+ " book_info,"
-   		+ " inventory,"
-   		+ " publisher,"
-   		+ " book_category,"
-   		+ " author"
-   		+ " FROM book"
-   		+ " WHERE book_id = #{bookId}")
+   @Select("SELECT book_id, "
+           + "book_name, "
+           + "isbn, "
+           + "book_price, "
+           + "publish_date, "
+           + "book_pic, "
+           + "book_info, "
+           + "inventory, "
+           + "publisher, "
+           + "book_category, "
+           + "author "
+           + "FROM book "
+           + "WHERE book_id = #{bookId}")
    BookDTO getBookById(int bookId);
- 
 
+   @Select("SELECT book_id, "
+           + "book_name, "
+           + "isbn, "
+           + "book_price, "
+           + "publish_date, "
+           + "book_pic, "
+           + "book_info, "
+           + "inventory, "
+           + "publisher, "
+           + "book_category, "
+           + "author "
+           + "FROM book "
+           + "WHERE book_category = #{category}")
+   List<BookDTO> getBooksByCategory(String category);
 }

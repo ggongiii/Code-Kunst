@@ -22,17 +22,16 @@
     .book-details {
         margin-left: 30px;
     }
-    
-.book-details > h1 {
+    .book-details > h1 {
         font-weight: bold;
         text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.5);
     }
     .purchase-options {
-    margin-left: 50px;
-    background: #e3f0f8;	
-    align-self: center;
-    padding: 30px;
-}
+        margin-left: 50px;
+        background: #e3f0f8;    
+        align-self: center;
+        padding: 30px;
+    }
     .purchase-options button {
         display: block;
         margin: 10px 0;
@@ -48,11 +47,44 @@
         background-color: green;
         color: white;
     }
+
+    .recommendedBook {
+        background: #f1f3f2;
+        text-align: center;
+        width: auto;
+        margin: 10px;
+        padding: 10px;
+        box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+        display: flex;
+        flex-wrap: wrap;
+    }
+
+    .recommendedBook .product {
+        width: 200px;
+        margin: 15px;
+        background-color: #fff;
+        padding: 8px;
+        box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+        text-align: center;
+    }
+
+    .recommendedBook img {
+        width: 100%;
+        height: auto;
+    }
+
+    .recommendedBook_detail p {
+        font-weight: bolder;
+        font-size: 12px;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        width: 100%;
+    }
 </style>
 </head>
 <body>
     <c:import url="/WEB-INF/views/include/top_menu.jsp" />
-    <c:import url="/WEB-INF/views/include/sideBar.jsp" />
     
     <div class="container">
         <div class="book-detail-container">
@@ -64,7 +96,7 @@
                 <p>저자: ${book.author} | 출판사: ${book.publisher}</p>
                 <p>ISBN: ${book.isbn}</p>
                 <hr>
-                  <p>판매가격: <span class="book-price">${book.book_price}</span>원</p>
+                <p>판매가격: <span class="book-price">${book.book_price}</span>원</p>
                 <p>배송일정: 내일 출고 가능</p>
             </div>
             <div class="purchase-options">
@@ -74,28 +106,41 @@
         </div>
     </div>
     
-    <!-- 하단부분 -->
-    
     <div class="container">
         <div class="book-detail-bottom">
             <div>
-            	<h1>도서정보</h1>
+                <h1>도서정보</h1>
                 <a>"${book.book_info}"</a>
             </div>
-            
         </div>
     </div>
     
+    <div class="container">
+        <h2>추천도서</h2>
+        <div class="recommendedBook">
+            <c:forEach var="recommendedBook" items="${recommendedBooks}">
+                <div class="product">
+                    <a href="${pageContext.request.contextPath}/board/bookDetail?bookId=${recommendedBook.book_id}">
+                        <img src="${recommendedBook.book_pic}" alt="${recommendedBook.book_name}" class="book-image">
+                    </a>
+                    <div class="recommendedBook_detail">
+                        <p>${recommendedBook.book_name}</p>
+                    </div>
+                </div>
+            </c:forEach>
+        </div>
+    </div>
     
     <div class="container">
         <div class="youtube">
             <div>
-            	<h1>관련유튜브</h1>
+                <h1>관련유튜브</h1>
                 <iframe width="560" height="315" src="https://www.youtube.com/embed/oZS74-w719E" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
             </div>
         </div>
     </div>
-
+    
     <c:import url="/WEB-INF/views/include/bottom_info.jsp" />
+    <c:import url="/WEB-INF/views/include/sideBar.jsp" />
 </body>
 </html>

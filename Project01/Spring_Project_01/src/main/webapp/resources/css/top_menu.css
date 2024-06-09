@@ -5,6 +5,7 @@
 	display: flex;
 	justify-content: space-between;
 	align-items: center;
+	flex-direction: row-reverse;
 }
 
 
@@ -45,6 +46,10 @@
 	align-items: center;
 	padding: 10px;
 	background-color: #fff;
+}
+.search-bar .logo{
+	margin-right: 10px;
+
 }
 
 .search-bar form {

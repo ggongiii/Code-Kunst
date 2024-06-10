@@ -113,8 +113,8 @@
 			<version>${javax.servlet-version}</version>
 			<scope>provided</scope>
 		</dependency>
-		
-		
+
+
 		<!-- https://mvnrepository.com/artifact/javax.servlet.jsp/javax.servlet.jsp-api -->
 		<dependency>
 			<groupId>javax.servlet.jsp</groupId>
@@ -122,6 +122,53 @@
 			<version>${javax.servlet.jsp-version}</version>
 			<scope>provided</scope>
 		</dependency>
+
+
+		<!-- ////////////////////////////////////////// -->
+		<!-- Google API Client Library for Java -->
+		<dependency>
+			<groupId>com.google.api-client</groupId>
+			<artifactId>google-api-client</artifactId>
+			<version>1.32.1</version>
+		</dependency>
+
+		<!-- Google API Client Extensions for Java -->
+		<dependency>
+			<groupId>com.google.api-client</groupId>
+			<artifactId>google-api-client-gson</artifactId>
+			<version>1.32.1</version>
+		</dependency>
+
+		<!-- Google OAuth Client Library for Java -->
+		<dependency>
+			<groupId>com.google.oauth-client</groupId>
+			<artifactId>google-oauth-client-jetty</artifactId>
+			<version>1.32.1</version>
+		</dependency>
+
+		<!-- Google YouTube API Client Library for Java -->
+		<dependency>
+			<groupId>com.google.apis</groupId>
+			<artifactId>google-api-services-youtube</artifactId>
+			<version>v3-rev222-1.25.0</version>
+		</dependency>
+
+		<!-- Jackson JSON Processor -->
+		<dependency>
+			<groupId>com.fasterxml.jackson.core</groupId>
+			<artifactId>jackson-core</artifactId>
+			<version>2.12.3</version>
+		</dependency>
+
+		<!-- https://mvnrepository.com/artifact/com.google.api-client/google-api-client-jackson2 -->
+		<dependency>
+			<groupId>com.google.api-client</groupId>
+			<artifactId>google-api-client-jackson2</artifactId>
+			<version>1.30.10</version>
+		</dependency>
+
+
 	</dependencies>
+
 
 </project>

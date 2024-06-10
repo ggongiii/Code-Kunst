@@ -15,11 +15,11 @@ public class MainController {
     @GetMapping("/main")
     public String myMain(Model model) {
         model.addAttribute("bookList", bookService.getBookList());
-        // 필요한 경우 다른 리스트를 추가
-        model.addAttribute("soccer", bookService.getBookList()); // 예시 데이터
-        model.addAttribute("newReleases", bookService.getBookList()); // 예시 데이터
-        model.addAttribute("steadySellers", bookService.getBookList()); // 예시 데이터
-        model.addAttribute("comics", bookService.getBookList()); // 예시 데이터
+        // 여기 메뉴바영역 : 필요한 경우 다른 리스트를 추가
+        model.addAttribute("soccer", bookService.getBookList()); // 메뉴바 1번항목
+        model.addAttribute("newReleases", bookService.getBookList()); //  메뉴바 2번항목
+        model.addAttribute("steadySellers", bookService.getBookList()); //  메뉴바 3번항목
+        model.addAttribute("comics", bookService.getBookList()); //  메뉴바 4번항목
         return "main";
         // WEB-INF/views 폴더의 main.jsp로 이동함
         // 그 이유는 ServletAppContext 클래스의

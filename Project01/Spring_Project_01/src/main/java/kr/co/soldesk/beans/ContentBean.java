@@ -1,7 +1,9 @@
 package kr.co.soldesk.beans;
 
 
-public class Content {
+
+//희태는 ContentBean이었음
+public class ContentBean {
 	private int content_idx;
 	private String content_subject;
 	private String content_text;

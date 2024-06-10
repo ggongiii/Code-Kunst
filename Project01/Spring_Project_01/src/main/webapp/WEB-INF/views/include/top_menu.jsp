@@ -7,29 +7,23 @@
 
 <body>
 <div class="header">
-	
-	<div id="common_lnb">
-		<ul class="menu">
-			<li class="nav-item"><a href="${root}user/login"
-				class="nav-link">로그인</a></li>
-			<li class="nav-item"><a href="${root}user/join" 
-				class="nav-link">회원가입</a></li>
-			<li class="nav-item"><a href="${root}user/modify"
-				class="nav-link">정보수정</a></li>
-			<li class="nav-item"><a href="${root}user/logout"
-				class="nav-link">로그아웃</a></li>
-		</ul>
-	</div>
-	
-<%-- db연결해서 해야할것	<ul class="navbar-nav">
-			<c:forEach var='obj' items="${topMenuList}">
-				<li class="nav-item"><a
-					href="${root}board/main?board_info_idx=${obj.board_info_idx}"
-					class="nav-link">${obj.board_info_name}</a></li>
-			</c:forEach>
-		</ul> --%>
-	
-	
+    <div class="logo">
+        <img src="" alt="로고">
+    </div>
+    <div id="common_lnb">
+        <ul class="navbar-nav">
+            <c:choose>
+                <c:when test="${not empty sessionScope.loggedInUser and sessionScope.loggedInUser.userLogin == true}">
+                    <li class="nav-item"><a href="${root}user/modify" class="nav-link">마이페이지</a></li>
+                    <li class="nav-item"><a href="${root}user/logout" class="nav-link">로그아웃</a></li>
+                </c:when>
+                <c:otherwise>
+                    <li class="nav-item"><a href="${root}user/login" class="nav-link">로그인</a></li>
+                    <li class="nav-item"><a href="${root}user/join" class="nav-link">회원가입</a></li>
+                </c:otherwise>
+            </c:choose>
+        </ul>
+    </div>
 </div>
 
 <!-- 검색 바 -->

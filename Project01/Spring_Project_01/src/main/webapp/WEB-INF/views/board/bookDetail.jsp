@@ -81,6 +81,36 @@
         text-overflow: ellipsis;
         width: 100%;
     }
+
+    /* 유튜브 비디오 */
+    .youtube-videos {
+        display: flex;
+        justify-content: space-around;
+        margin-top: 20px;
+        background: #e3f0f8;
+  		padding: 20px;
+    }
+    .youtube-video {
+        width: 30%;
+        background-color: #fff;
+        padding: 10px;
+        box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+        text-align: center;
+    }
+    .youtube-video a {
+        display: block;
+    }
+    .youtube-thumbnail {
+        width: 100%;
+        height: auto;
+    }
+    .youtube-video-detail p {
+        font-weight: bolder;
+        font-size: 14px;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+    }
 </style>
 </head>
 <body>
@@ -132,11 +162,18 @@
     </div>
     
     <div class="container">
-        <div class="youtube">
-            <div>
-                <h1>관련유튜브</h1>
-                <iframe width="560" height="315" src="https://www.youtube.com/embed/oZS74-w719E" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-            </div>
+        <h2>관련 유튜브</h2>
+        <div class="youtube-videos">
+            <c:forEach var="video" items="${recommendedVideos}" varStatus="status">
+                <div class="youtube-video">
+                    <a href="https://www.youtube.com/watch?v=${video.videoId}" target="_blank">
+                        <img src="${video.highThumbnailUrl}" alt="${video.title}" class="youtube-thumbnail">
+                    </a>
+                    <div class="youtube-video-detail">
+                        <p>${video.title}</p>
+                    </div>
+                </div>
+            </c:forEach>
         </div>
     </div>
     

@@ -10,65 +10,52 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
 import kr.co.soldesk.beans.BookDTO;
+
 import kr.co.soldesk.service.BookService;
+import kr.co.soldesk.beans.YouTubeDto;
+ import kr.co.soldesk.youtube.YouTubeSearch;
+
 
 @Controller
 @RequestMapping("/board")
 public class BoardController {
-    
+    //책API
     @Autowired
     private BookService bookService;
-
+    //유튜브API
+    @Autowired
+    private YouTubeSearch youTubeSearch;
+	//--여기부터--
     @GetMapping("/main")
     public String myMain() {
         return "board/main";
-        // WEB-INF / view / board 폴더의 main.jsp로 이동함
-        // 그 이유는 ServletAppContext 클래스의
-        // configureViewResolvers 메서드에서 그렇게 설정했기 때문임
-    } // method
+    } 
     
     @GetMapping("/read")
     public String myRead() {
         return "board/read";
-        // WEB-INF / view / board 폴더의 read.jsp로 이동함
-        // 그 이유는 ServletAppContext 클래스의
-        // configureViewResolvers 메서드에서 그렇게 설정했기 때문임
-    } // method
+    } 
     
     @GetMapping("/modify")
     public String myModify() {
         return "board/modify";
-        // WEB-INF / view / board 폴더의 modify.jsp로 이동함
-        // 그 이유는 ServletAppContext 클래스의
-        // configureViewResolvers 메서드에서 그렇게 설정했기 때문임
-    } // method
+    }
     
     @GetMapping("/write")
     public String myWrite() {
         return "board/write";
-        // WEB-INF / view / board 폴더의 write.jsp로 이동함
-        // 그 이유는 ServletAppContext 클래스의
-        // configureViewResolvers 메서드에서 그렇게 설정했기 때문임
-    } // method
+    }
     
     @GetMapping("/delete")
     public String myDelete() {
         return "board/delete";
-        // WEB-INF / view / board 폴더의 delete.jsp로 이동함
-        // 그 이유는 ServletAppContext 클래스의
-        // configureViewResolvers 메서드에서 그렇게 설정했기 때문임
-    } // method
+    } 
     
     @GetMapping("/page")
     public String page(Model model) {
-    	 model.addAttribute("bookList", bookService.getBookList());
-         return "board/page";
-    	
-
-        // WEB-INF / view / board 폴더의 page.jsp로 이동함
-        // 그 이유는 ServletAppContext 클래스의
-        // configureViewResolvers 메서드에서 그렇게 설정했기 때문임
-    } // method
+        model.addAttribute("bookList", bookService.getBookList());
+        return "board/page";
+    } 
     
     @GetMapping("/bookDetail")
     public String bookDetail(@RequestParam("bookId") int bookId, Model model) {
@@ -78,7 +65,11 @@ public class BoardController {
         List<BookDTO> recommendedBooks = bookService.getRandomBooksByCategory(book.getBook_category(), 5);
         model.addAttribute("recommendedBooks", recommendedBooks);
 
+        // YouTube 랜덤 하게
+        List<YouTubeDto> allVideos = youTubeSearch.searchVideos(book.getBook_category() + " 추천");
+        List<YouTubeDto> recommendedVideos = youTubeSearch.getRandomVideos(allVideos, 3);
+        model.addAttribute("recommendedVideos", recommendedVideos);
+
         return "board/bookDetail";
     }
-    
 } // class
